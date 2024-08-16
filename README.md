@@ -1,4 +1,4 @@
-# Project Title: Satellite Imagery Change Detection
+# Satellite Imagery Change Detection
 
 Project Goal:
 This project is the initial step towards a broader goal of understanding the effects of deforestation and wildfires. By focusing on wildfire detection through change detection, this project aims to lay the groundwork for future research and development.
