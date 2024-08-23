@@ -19,26 +19,25 @@ In subsequent phases, a custom dataset will be collected to address the specific
 
 The model consists of two primary components:
 
-1. A Siamese FCN for extracting bitemporal image feature maps.
-2. A self-attention module for refining these feature maps by considering spatial-temporal dependencies.
+* A Siamese FCN for extracting bitemporal image feature maps.
+* A self-attention module for refining these feature maps by considering spatial-temporal dependencies.
 
 **Feature Extractor**
 
-1. Based on the ResNet-18 architecture.
-2. Global pooling and fully connected layers are removed to adapt for dense classification tasks.
-3. High-level and low-level features are fused for better representations.
+* Based on the ResNet-18 architecture.
+* Global pooling and fully connected layers are removed to adapt for dense classification tasks. High-level and low-level features are fused for better representations.
 
 **Self-Attention Mechanism**
 
-1. Calculates correlations between different elements within the image.
-2. Exploits spatial-temporal dependencies to improve illumination invariance and 		misregistration robustness.
-3. Inspired by the PSPNet approach for incorporating global spatial context.
-4. Uses multi-scale subregions to capture dependencies at various scales.
-5. Reduces the impact of misregistration errors by considering global relationships between objects.
+* Calculates correlations between different elements within the image.
+* Exploits spatial-temporal dependencies to improve illumination invariance and 		misregistration robustness.
+* Inspired by the PSPNet approach for incorporating global spatial context.
+* Uses multi-scale subregions to capture dependencies at various scales.
+* Reduces the impact of misregistration errors by considering global relationships between objects.
 
-4. Employed a **contrastive loss** to encourage a small distance of each no-change pixel pair and a large distance for each change in the embedding space.
+3. Employed a **contrastive loss** to encourage a small distance of each no-change pixel pair and a large distance for each change in the embedding space.
 
-5. **Addressing Class Imbalance with Batch-Balanced Contrastive Loss**: BCL addresses this by using a batch-weight prior to modify the class weights in the original contrastive loss. This helps to balance the influence of different classes and mitigate the impact of class imbalance.
+4. **Addressing Class Imbalance with Batch-Balanced Contrastive Loss**: BCL addresses this by using a batch-weight prior to modify the class weights in the original contrastive loss. This helps to balance the influence of different classes and mitigate the impact of class imbalance.
 
 
 #### **Open [change_detection.ipqnb](https://github.com/robinsonlakranew/change_detection/blob/main/change_detection.ipynb) to see model implementation and results**
